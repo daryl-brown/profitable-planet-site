@@ -1,0 +1,9 @@
+{
+  "_readme": "Add an entry here when a YouTube video is uploaded for an episode. Use the episode slug as the key. Daryl pushes this file to GitHub; Vercel redeploys in under a minute and the video appears on the episode page automatically.",
+  "_example": {
+    "episode-1-why-i-made-this-show": {
+      "youtubeUrl": "https://www.youtube.com/watch?v=XXXXXXXXX",
+      "youtubeEmbedId": "XXXXXXXXX"
+    }
+  }
+}

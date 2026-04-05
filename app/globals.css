@@ -1,0 +1,397 @@
+@import "tailwindcss";
+
+/* ============================================================
+   BRAND DESIGN TOKENS
+   All colours defined here are available as Tailwind utilities
+   e.g. bg-green, text-ink-mid, border-warm-rule
+   ============================================================ */
+@theme {
+  /* Brand greens */
+  --color-green:       #2D5016;
+  --color-green-mid:   #4A7C1F;
+  --color-green-light: #8BAE5A;
+  --color-green-pale:  #E8F0DC;
+
+  /* Warm neutrals */
+  --color-warm-white:  #FDFAF5;
+  --color-warm-cream:  #F5F0E8;
+  --color-warm-rule:   #D6CFC4;
+
+  /* Ink */
+  --color-ink-deep:    #1C1917;
+  --color-ink-mid:     #44403C;
+  --color-ink-light:   #78716C;
+  --color-ink-faint:   #A8A29E;
+
+  /* Platform brand colours */
+  --color-spotify:     #1DB954;
+  --color-apple:       #9933CC;
+  --color-youtube:     #FF0000;
+}
+
+/* ============================================================
+   BASE RESET & GLOBAL STYLES
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  /* Font variables — set here since @fontsource doesn't inject CSS vars */
+  --font-playfair: 'Playfair Display', ui-serif, Georgia, serif;
+  --font-dm-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-dm-mono: 'DM Mono', ui-monospace, monospace;
+}
+
+body {
+  background-color: var(--color-warm-white);
+  color: var(--color-ink-mid);
+  font-family: var(--font-dm-sans);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   TYPOGRAPHY SCALE
+   ============================================================ */
+
+/* Display / H1 */
+h1 {
+  font-family: var(--font-playfair), 'Playfair Display', ui-serif, Georgia, serif;
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 600;
+  color: var(--color-ink-deep);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* H2 */
+h2 {
+  font-family: var(--font-playfair), 'Playfair Display', ui-serif, Georgia, serif;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 600;
+  color: var(--color-ink-deep);
+  line-height: 1.2;
+}
+
+/* H3 */
+h3 {
+  font-family: var(--font-dm-sans), 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-ink-deep);
+  line-height: 1.4;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================================
+   FONT UTILITY CLASSES
+   Used in components where JSX className is set directly
+   ============================================================ */
+.font-playfair {
+  font-family: var(--font-playfair), 'Playfair Display', ui-serif, Georgia, serif;
+}
+
+.font-dm-sans {
+  font-family: var(--font-dm-sans), 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-dm-mono {
+  font-family: var(--font-dm-mono), 'DM Mono', ui-monospace, monospace;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-dm-mono), 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-green-mid);
+}
+
+.eyebrow-dark {
+  font-family: var(--font-dm-mono), 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-green-light);
+}
+
+/* Caption / meta */
+.caption {
+  font-family: var(--font-dm-mono), 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-ink-light);
+}
+
+/* Footer text */
+.footer-text {
+  font-family: var(--font-dm-mono), 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ============================================================
+   SECTION DIVIDER
+   3px × 48px Forest Green — never full width
+   ============================================================ */
+.section-rule {
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-green);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   CARD STYLES
+   Zero border-radius. Left-border accent. No shadows.
+   ============================================================ */
+.card {
+  border-left: 3px solid var(--color-green);
+  background-color: var(--color-warm-white);
+}
+
+/* ============================================================
+   SHOW NOTES PROSE STYLES
+   Applied to sanitized HTML content from RSS content:encoded
+   ============================================================ */
+.show-notes {
+  color: var(--color-ink-mid);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.show-notes h2 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.show-notes h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
+}
+
+.show-notes p {
+  margin-bottom: 1.25em;
+}
+
+.show-notes ul,
+.show-notes ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
+}
+
+.show-notes li {
+  margin-bottom: 0.4em;
+}
+
+.show-notes a {
+  color: var(--color-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.show-notes a:hover {
+  color: var(--color-green-mid);
+}
+
+.show-notes strong {
+  font-weight: 500;
+  color: var(--color-ink-deep);
+}
+
+.show-notes blockquote {
+  border-left: 3px solid var(--color-green);
+  padding-left: 1em;
+  color: var(--color-ink-light);
+  font-style: italic;
+  margin: 1.5em 0;
+}
+
+/* ============================================================
+   AUDIO PLAYER CUSTOM RANGE INPUT
+   Custom scrub bar — cannot be done fully with Tailwind
+   ============================================================ */
+.audio-scrub {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 0;
+  background: var(--color-warm-rule);
+  outline: none;
+  cursor: pointer;
+  min-height: 44px;        /* mobile touch target */
+  padding: 20px 0;         /* expand click area vertically */
+  background-clip: content-box;
+}
+
+.audio-scrub::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-green);
+  cursor: pointer;
+}
+
+.audio-scrub::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-green);
+  cursor: pointer;
+  border: none;
+}
+
+.audio-scrub::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--color-warm-rule);
+}
+
+.audio-scrub::-moz-range-track {
+  height: 4px;
+  background: var(--color-warm-rule);
+}
+
+/* ============================================================
+   SCROLL-REVEAL ANIMATION
+   Content is visible by default.
+   When JS loads it adds .js-ready to <body>.
+   Inside .js-ready, unrevealed items start invisible.
+   IntersectionObserver adds .is-visible when in viewport.
+   ============================================================ */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.js-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ============================================================
+   BUTTON BASE
+   Zero border-radius. Editorial, not startup.
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-dm-sans), 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   SUBSCRIBE BUTTON VARIANTS
+   Outline style, fills on hover
+   ============================================================ */
+.btn-subscribe {
+  border: 2px solid currentColor;
+  background: transparent;
+}
+
+.btn-subscribe-spotify {
+  color: var(--color-spotify);
+}
+.btn-subscribe-spotify:hover {
+  background-color: var(--color-spotify);
+  color: white;
+}
+
+.btn-subscribe-apple {
+  color: var(--color-apple);
+}
+.btn-subscribe-apple:hover {
+  background-color: var(--color-apple);
+  color: white;
+}
+
+.btn-subscribe-youtube {
+  color: var(--color-youtube);
+}
+.btn-subscribe-youtube:hover {
+  background-color: var(--color-youtube);
+  color: white;
+}
+
+/* Primary CTA button — Forest Green */
+.btn-primary {
+  background-color: var(--color-green);
+  color: var(--color-warm-white);
+}
+.btn-primary:hover {
+  background-color: var(--color-green-mid);
+}
+
+/* Ghost button — for use on Forest Green backgrounds */
+.btn-ghost {
+  border: 2px solid var(--color-green-light);
+  color: var(--color-warm-white);
+  background: transparent;
+}
+.btn-ghost:hover {
+  background-color: var(--color-green-light);
+  color: var(--color-ink-deep);
+}
+
+/* ============================================================
+   VIDEO EMBED — 16:9 RESPONSIVE WRAPPER
+   ============================================================ */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe,
+.video-wrapper .video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   UTILITY: VISUALLY HIDDEN (ACCESSIBILITY)
+   ============================================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
