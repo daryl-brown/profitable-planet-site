@@ -44,50 +44,25 @@ export default function SuggestPage() {
 
             {/* Form */}
             <div>
-              {/* ================================================================
-                  SUGGEST FORM EMBED PLACEHOLDER
-                  Replace this div with the GHL iframe or Formspree form.
-                  See the homepage SuggestStrip component for context.
-
-                  Formspree: <form action="https://formspree.io/f/[FORM_ID]" method="POST">
-                  GHL:       <iframe src="https://..." width="100%" height="700" />
-
-                  Form fields required:
-                  - Your name (text, required)
-                  - Your email (email, required)
-                  - Business or person name (text, required)
-                  - Website or LinkedIn URL (url, optional)
-                  - Why should they be on the show? (textarea, optional)
-                    Placeholder: "What are they doing that others aren't? What's the story worth telling?"
-
-                  Post-submit message:
-                  "Thank you. We will look into them and reach out if they're a good fit for the show."
-                  ================================================================ */}
-              <div
-                className="border-l-[3px] border-warm-rule bg-green-pale p-6"
-                role="note"
-                aria-label="Suggest a business form placeholder"
-              >
-                <p className="eyebrow text-ink-light mb-2">Awaiting form embed</p>
-                <p className="text-sm text-ink-light font-dm-sans mb-4">
-                  [SUGGEST_FORM_EMBED] — Replace this div with the GHL iframe embed
-                  or Formspree form.
-                </p>
-                <div className="space-y-2">
-                  {[
-                    'Your name (required)',
-                    'Your email (required)',
-                    'Business or person name (required)',
-                    'Website or LinkedIn URL (optional)',
-                    'Why should they be on the show? (textarea, optional)',
-                  ].map((field) => (
-                    <p key={field} className="text-xs text-ink-faint font-dm-mono">
-                      · {field}
-                    </p>
-                  ))}
-                </div>
+              <div style={{ height: '578px' }}>
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/xwJa1TBtNBBLBXwVYfoX"
+                  style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
+                  id="inline-xwJa1TBtNBBLBXwVYfoX"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Profitable Planet Website Suggest"
+                  data-height="578"
+                  data-layout-iframe-id="inline-xwJa1TBtNBBLBXwVYfoX"
+                  data-form-id="xwJa1TBtNBBLBXwVYfoX"
+                  title="Profitable Planet Website Suggest"
+                />
               </div>
-              {/* ================================================================ */}
             </div>
           </div>
         </div>

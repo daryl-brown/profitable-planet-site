@@ -40,27 +40,25 @@ export function SuggestStrip() {
 
           {/* Form embed */}
           <div>
-            {/* ================================================================
-                SUGGEST FORM EMBED PLACEHOLDER
-                Replace the div below with the GHL iframe embed or Formspree form.
-                ================================================================ */}
-            <div
-              className="border-l-[3px] border-warm-rule bg-warm-white p-6"
-              role="note"
-              aria-label="Suggest a business form placeholder"
-            >
-              <p className="eyebrow text-ink-light mb-2">Awaiting form embed</p>
-              <p className="text-sm text-ink-light font-dm-sans mb-4">
-                [SUGGEST_FORM_EMBED] — Replace this div with the GHL iframe embed
-                or Formspree form. Daryl to confirm which.
-              </p>
-              <p className="text-xs text-ink-faint font-dm-mono">
-                Form fields: Your name (required) · Your email (required) ·
-                Business or person name (required) · Website or LinkedIn URL (optional) ·
-                Why should they be on the show? (textarea, optional)
-              </p>
+            <div style={{ height: '578px' }}>
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/xwJa1TBtNBBLBXwVYfoX"
+                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
+                id="inline-xwJa1TBtNBBLBXwVYfoX"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Profitable Planet Website Suggest"
+                data-height="578"
+                data-layout-iframe-id="inline-xwJa1TBtNBBLBXwVYfoX"
+                data-form-id="xwJa1TBtNBBLBXwVYfoX"
+                title="Profitable Planet Website Suggest"
+              />
             </div>
-            {/* ================================================================ */}
           </div>
         </div>
       </div>

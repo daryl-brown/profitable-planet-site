@@ -62,15 +62,14 @@ export default async function AboutPage() {
               </h2>
 
               <div className="flex flex-col sm:flex-row gap-6 items-start mb-6">
-                {/* Photo placeholder */}
-                <div
-                  className="w-24 h-24 flex-shrink-0 bg-green-pale border-l-[3px] border-green flex items-center justify-center"
-                  aria-label="Daryl's photo placeholder"
-                >
-                  <p className="eyebrow text-green text-center text-[9px] px-2">
-                    [DARYL_PHOTO]
-                  </p>
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://assets.cdn.filesafe.space/Gr9GT9COWAml3vXv07yO/media/69d4b2dbbec7abdef13036ec.png"
+                  alt="Daryl Brown"
+                  width={96}
+                  height={96}
+                  className="w-24 h-24 flex-shrink-0 object-cover"
+                />
 
                 <div>
                   <h3 className="mb-3">Daryl Brown</h3>

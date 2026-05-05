@@ -12,6 +12,7 @@ import '@fontsource/dm-sans/300.css'
 import '@fontsource/dm-sans/400.css'
 import '@fontsource/dm-sans/500.css'
 import '@fontsource/dm-mono/400.css'
+import Script from 'next/script'
 import './globals.css'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
@@ -50,6 +51,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
       </body>
     </html>
   )

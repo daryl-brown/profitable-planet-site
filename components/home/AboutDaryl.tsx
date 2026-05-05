@@ -11,14 +11,13 @@ export function AboutDaryl() {
           {/* Photo */}
           <div className="flex-shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <div
-              className="w-28 h-28 md:w-32 md:h-32 bg-green-pale border-l-[3px] border-green flex items-center justify-center"
-              aria-label="Daryl's photo placeholder"
-            >
-              <p className="eyebrow text-green text-center text-[9px] px-2">
-                [DARYL_PHOTO]
-              </p>
-            </div>
+            <img
+              src="https://assets.cdn.filesafe.space/Gr9GT9COWAml3vXv07yO/media/69d4b2dbbec7abdef13036ec.png"
+              alt="Daryl Brown"
+              width={128}
+              height={128}
+              className="w-28 h-28 md:w-32 md:h-32 object-cover"
+            />
           </div>
 
           {/* Text */}

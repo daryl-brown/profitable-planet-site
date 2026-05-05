@@ -27,27 +27,25 @@ export function EmailSignup() {
             No noise.
           </p>
 
-          {/* ================================================================
-              GHL EMBED PLACEHOLDER
-              Replace the div below with the GHL iframe embed code.
-              Tag: podcast-listener
-              ================================================================ */}
-          <div
-            className="border-l-[3px] border-warm-rule bg-green-pale p-6"
-            role="note"
-            aria-label="Email signup form placeholder"
-          >
-            <p className="eyebrow text-ink-light mb-2">Awaiting embed code</p>
-            <p className="text-sm text-ink-light font-dm-sans">
-              [GHL_EMAIL_FORM_EMBED] — Replace this div with the GHL iframe embed
-              from Daryl&apos;s account. The form should tag new subscribers as{' '}
-              <code className="font-dm-mono text-xs bg-warm-cream px-1 py-0.5">
-                podcast-listener
-              </code>
-              .
-            </p>
+          <div style={{ minHeight: '400px' }}>
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/loktIy17bZWP1divYizp"
+              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px', minHeight: '400px' }}
+              id="inline-loktIy17bZWP1divYizp"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Profitable Planet Subscribe"
+              data-height="undefined"
+              data-layout-iframe-id="inline-loktIy17bZWP1divYizp"
+              data-form-id="loktIy17bZWP1divYizp"
+              title="Profitable Planet Subscribe"
+            />
           </div>
-          {/* ================================================================ */}
         </div>
       </div>
     </section>

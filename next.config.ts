@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: '**.npr.org' },
       { protocol: 'https', hostname: '**.buzzsprout.com' },
       { protocol: 'https', hostname: '**.libsyn.com' },
+      { protocol: 'https', hostname: 'assets.cdn.filesafe.space' },
     ],
   },
 }
